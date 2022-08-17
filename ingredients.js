@@ -137,4 +137,16 @@ module.exports = {
     fat: 3.25,
     carbohydrates: 4.8,
   },
+  cannedTuna: {
+    calories: 123,
+    protein: 22.12,
+    fat: 0,
+    carbohydrates: 1,
+  },
+  metamucil: {
+    calories: 334,
+    protein: 0,
+    fat: 0,
+    carbohydrates: 95.91,
+  },
 };

@@ -3,9 +3,23 @@ const { sumMacros, makeLabel, printDay } = require("./utils");
 
 const beefStewPortion = makeLabel(meals.beefStew, 18);
 const stirFryPortion = makeLabel(meals.stirFry, 14);
-const ricePortion = makeLabel(meals.rice, 1);
-const proteinShakePortion = makeLabel(meals.proteinShake, 1);
-const cupOfCoffeePortion = makeLabel(meals.cupOfCoffee, 1);
+const ricePortion = makeLabel(meals.rice);
+const proteinShakeTriplePortion = makeLabel(meals.proteinShake, 0.3333);
+const proteinShakeDoublePortion = makeLabel(meals.proteinShake, 0.5);
+const cupOfCoffeeWithSugarDoublePortion = makeLabel(
+  meals.cupOfCoffeeWithSugar,
+  0.5
+);
+const cupOfCoffeeWithSugarPortion = makeLabel(meals.cupOfCoffeeWithSugar);
+const cupOfCoffeeWithMilkPortion = makeLabel(meals.cupOfCoffeeWithMilk);
+const cupOfCoffeeWithMilkTriplePortion = makeLabel(
+  meals.cupOfCoffeeWithMilk,
+  0.33333
+);
+const morningPreWorkoutPortion = makeLabel(meals.morningPreWorkout, 1);
+const tunaRicePortion = makeLabel(meals.tunaRice);
+const tripleMetamucil = makeLabel(meals.tripleMetamucil);
+const doubleMetamucil = makeLabel(meals.tripleMetamucil, 1.5);
 
 const targetMacros = {
   calories: -1854,
@@ -14,27 +28,77 @@ const targetMacros = {
   carbohydrates: -181,
 };
 
-const dailyIntake = [
+const dailyIntake1 = [
   beefStewPortion,
   ricePortion,
   stirFryPortion,
   ricePortion,
-  proteinShakePortion,
-  proteinShakePortion,
-  proteinShakePortion,
-  proteinShakePortion,
-  proteinShakePortion,
-  cupOfCoffeePortion,
-  cupOfCoffeePortion,
-  cupOfCoffeePortion,
+  proteinShakeTriplePortion,
+  proteinShakeDoublePortion,
 ];
 
-printDay(
-  "Beef stew w/rice, stir fry w/rice, three cups of coffee, five scoops protein",
-  sumMacros(...dailyIntake)
-);
+const dailyIntake2 = [
+  tunaRicePortion,
+  beefStewPortion,
+  ricePortion,
+  proteinShakeTriplePortion,
+  proteinShakeDoublePortion,
+];
 
-printDay(
-  "difference from target macros",
-  sumMacros(...dailyIntake, targetMacros)
-);
+const mealOptions = [
+  beefStewPortion,
+  stirFryPortion,
+  ricePortion,
+  proteinShakeTriplePortion,
+  proteinShakeDoublePortion,
+  cupOfCoffeeWithSugarDoublePortion,
+  cupOfCoffeeWithMilkPortion,
+  tunaRicePortion,
+  tripleMetamucil,
+];
+
+const dailyIntake = [
+  proteinShakeTriplePortion,
+  tunaRicePortion,
+  proteinShakeDoublePortion,
+  tripleMetamucil,
+  beefStewPortion,
+  ricePortion,
+  // beefStewPortion,
+  // stirFryPortion,
+  // ricePortion,
+  // proteinShakeDoublePortion,
+  // cupOfCoffeeWithMilkPortion,
+];
+
+const dailyIntake_0815 = [
+  proteinShakeTriplePortion,
+  cupOfCoffeeWithSugarPortion,
+  // tunaRicePortion,
+  proteinShakeDoublePortion,
+  // tripleMetamucil,
+  doubleMetamucil,
+  beefStewPortion,
+  ricePortion,
+  stirFryPortion,
+  ricePortion,
+  // cupOfCoffeeWithMilkPortion,
+];
+
+const dailyIntake_0816 = [
+  proteinShakeTriplePortion,
+  // cupOfCoffeeWithSugarPortion,
+  morningPreWorkoutPortion,
+  // tunaRicePortion,
+  // proteinShakeDoublePortion,
+  // tripleMetamucil,
+  // doubleMetamucil,
+  // beefStewPortion,
+  // ricePortion,
+  // stirFryPortion,
+  // beefStewPortion,
+  // ricePortion,
+  // cupOfCoffeeWithMilkPortion,
+];
+
+printDay("difference from target macros", [...dailyIntake_0816, targetMacros]);

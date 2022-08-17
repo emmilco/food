@@ -1,7 +1,12 @@
-const cupOfCoffee = [
+const cupOfCoffeeWithSugar = [
   [4.2, "g", "sugar"],
   [60, "g", "wholeMilk"],
 ];
+
+const cupOfCoffeeWithMilk = [[60, "g", "wholeMilk"]];
+const morningPreWorkout = [[8.4, "g", "sugar"]];
+
+const tripleMetamucil = [[42, "g", "metamucil"]];
 
 const beefStew = [
   [8, "oz", "mushrooms"],
@@ -32,10 +37,20 @@ const stirFry = [
 
 const rice = [[67, "g", "sushiRice"]];
 
+const tunaRice = [
+  [66, "g", "cannedTuna"],
+  [14, "g", "oliveOil"],
+  [67, "g", "sushiRice"],
+];
+
 const proteinShake = [[31, "g", "proteinShake"]];
 
 module.exports = {
-  cupOfCoffee,
+  tripleMetamucil,
+  tunaRice,
+  cupOfCoffeeWithSugar,
+  cupOfCoffeeWithMilk,
+  morningPreWorkout,
   beefStew,
   stirFry,
   rice,

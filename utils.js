@@ -40,7 +40,7 @@ function sumMacros(...rest) {
   return sum;
 }
 
-function makeLabel(recipe, portions) {
+function makeLabel(recipe, portions = 1) {
   let macros = {
     calories: 0,
     protein: 0,
@@ -60,12 +60,23 @@ function makeLabel(recipe, portions) {
   };
 }
 
+function generateRow(items, sum, fieldName) {
+  let row = "";
+  items.forEach((item) => {
+    row += `${Math.trunc(item[fieldName]).toString().padEnd(4)} + `;
+  });
+  row = row.slice(0, -2);
+  row += `= ${Math.trunc(sum[fieldName]).toString().padEnd(4)}`;
+  return row;
+}
+
 function printDay(label, macros) {
-  console.log(label);
-  console.log(`Calories:      ${macros.calories}`);
-  console.log(`Carbohydrates: ${macros.carbohydrates}`);
-  console.log(`Protein:       ${macros.protein}`);
-  console.log(`Fat:           ${macros.fat}`);
+  const summed = sumMacros(...macros);
+  console.log("\n\n" + label);
+  console.log(`Calories:      ${generateRow(macros, summed, "calories")}`);
+  console.log(`Carbohydrates: ${generateRow(macros, summed, "carbohydrates")}`);
+  console.log(`Protein:       ${generateRow(macros, summed, "protein")}`);
+  console.log(`Fat:           ${generateRow(macros, summed, "fat")}`);
 }
 
 module.exports = {
